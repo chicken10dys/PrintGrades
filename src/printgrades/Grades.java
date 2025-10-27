@@ -8,19 +8,23 @@ package printgrades;
  *
  * @author sivagamasrinivasan
  */
+// APLUS is used since the + in A+ is treated as the plus operator
+enum Grade{
+    APLUS, A, B, C  
+}
 public class Grades {
-  public void gradeDetail(String code)
+  public void gradeDetail(Grade code)
 {
-  switch(code.toUpperCase())
+  switch(code)
         {
-        case "A+": System.out.println("EXCELLENT");
+        case APLUS: System.out.println("EXCELLENT");
         break;
-        case "A": System.out.println("VERY GOOD");
+        case A: System.out.println("VERY GOOD");
         break;
-        case "B":
+        case B:
         System.out.println("GOOD");
         break;
-        case "C": 
+        case C: 
             System.out.println("SATISFACTORY");
         break;
         default:
