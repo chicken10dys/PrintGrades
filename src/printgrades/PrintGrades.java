@@ -16,6 +16,8 @@ import java.util.Scanner;
  * @author srinivsi 
  */
 
+
+
 public class PrintGrades {
 
     /**
@@ -23,12 +25,26 @@ public class PrintGrades {
      */
     public static void main(String[] args) 
       {
+ 
+    
     Scanner in =new Scanner(System.in);
-    System.out.println("Enter the student grade code (a+,a,b+,c) in string");
-    String code = in.next();
-    Grades t= new Grades();
-    t.gradeDetail(code); 
+    System.out.print("Enter the student grade code: ");
+    printInputs();
+    System.out.println();
+    Grade code = Grade.valueOf(in.next().toUpperCase());
+    printResult(code);
     }  // TODO code application logic here
     
+    // Print result from Grades class
+    private static void printResult(Grade code){
+        Grades t= new Grades();
+        t.gradeDetail(code); 
+    }
+    // Print possible grades
+    private static void printInputs(){
+            for (Grade value : Grade.values()) {
+            System.out.print(value + " ");
+        }
+    }
    
 }
